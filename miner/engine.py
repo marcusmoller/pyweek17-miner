@@ -127,12 +127,12 @@ class GameEngine():
 
             # mine
             elif event.key == pygame.K_c:
-                level.destroyBlock(player.targetBlock)
+                level.destroyBlock(player.targetBlock[0], player.targetBlock[1])
 
             # spawn block
             elif event.key == pygame.K_v:
                 if player.collectedResources >= 4:
-                    level.spawnBlock(player.targetBlock)
+                    level.spawnBlock(player.targetBlock[0], player.targetBlock[1])
                     player.collectedResources -= 4
 
             # exit

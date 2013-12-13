@@ -4,7 +4,7 @@ import random
 
 from player import player
 from block import BlockSprite
-from resource import ResourceSprite
+from gameresource import ResourceSprite
 from constants import BLOCK_W, BLOCK_H, RESOURCE_MAX_W, DIR_UP, DIR_DOWN, DIR_LEFT, DIR_RIGHT
 
 class LevelEngine():
@@ -44,7 +44,7 @@ class LevelEngine():
                 # make some blocks resource rich
                 altitude = y - 15
 
-                rnd = random.randint(0, 400/y)
+                rnd = random.randint(0, int(400/y))
                 if rnd == 0:
                     tempBlock = BlockSprite(x*BLOCK_W, y*BLOCK_H, isResourceRich=True)
                 else:
@@ -110,7 +110,7 @@ class LevelEngine():
 
         self.blocksAroundPlayer = blocks
 
-    def destroyBlock(self, (x, y)):
+    def destroyBlock(self, x, y):
         if self.levelStructure[x][y] is not None:
             # check if the block is resource rich
             if self.levelStructure[x][y].isResourceRich:
@@ -127,7 +127,7 @@ class LevelEngine():
             self.calculateOuterBlocks()
 
 
-    def spawnBlock(self, (x, y)):
+    def spawnBlock(self, x, y):
         if self.levelStructure[x][y] is None:
             self.levelStructure[x][y] = BlockSprite(x*BLOCK_W, (y)*BLOCK_H)
             self.calculateOuterBlocks()
