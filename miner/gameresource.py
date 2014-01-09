@@ -1,7 +1,7 @@
 import pygame
 import random
 
-from constants import RESOURCE_MAX_W, RESOURCE_MAX_H, RESOURCE_COLORS, MOVEMENT_SPEED
+from miner.constants import RESOURCE_MAX_W, RESOURCE_MAX_H, RESOURCE_COLORS, MOVEMENT_SPEED
 
 class ResourceSprite(pygame.sprite.Sprite):
     def __init__(self, x, y):

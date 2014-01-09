@@ -1,11 +1,11 @@
 import pygame
 import time
 
-from menus import *
-from player import player
-from level import level
-from graphics import GraphicsEngine
-from constants import *
+from miner.menus import *
+from miner.player import player
+from miner.level import level
+from miner.graphics import GraphicsEngine
+from miner.constants import *
 
 
 class GameEngine():

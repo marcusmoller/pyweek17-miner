@@ -1,6 +1,6 @@
 import pygame
 
-from constants import *
+from miner.constants import *
 
 class PlayerSprite(pygame.sprite.Sprite):
     def __init__(self):

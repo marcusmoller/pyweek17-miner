@@ -1,8 +1,8 @@
 import pygame
 import sys
 
-from data import filepath
-from constants import *
+from miner.data import filepath
+from miner.constants import *
 
 # menu object
 class MenuClass():

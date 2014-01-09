@@ -1,10 +1,10 @@
 import pygame
 import random
 
-from player import player
-from level import level
-from data import filepath
-from constants import *
+from miner.player import player
+from miner.level import level
+from miner.data import filepath
+from miner.constants import *
 
 class GraphicsEngine():
     def __init__(self, surface):

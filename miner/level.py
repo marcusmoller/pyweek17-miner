@@ -2,10 +2,10 @@ import pygame
 import time
 import random
 
-from player import player
-from block import BlockSprite
-from gameresource import ResourceSprite
-from constants import BLOCK_W, BLOCK_H, RESOURCE_MAX_W, DIR_UP, DIR_DOWN, DIR_LEFT, DIR_RIGHT
+from miner.player import player
+from miner.block import BlockSprite
+from miner.gameresource import ResourceSprite
+from miner.constants import BLOCK_W, BLOCK_H, RESOURCE_MAX_W, DIR_UP, DIR_DOWN, DIR_LEFT, DIR_RIGHT
 
 class LevelEngine():
     def __init__(self):
