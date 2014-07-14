@@ -27,7 +27,8 @@ class GameEngine():
 
     def initializeGame(self):
         pygame.init()
-        self.screen = pygame.display.set_mode([self.screenWidth, self.screenHeight])
+        self.screen = pygame.display.set_mode(
+            [self.screenWidth, self.screenHeight])
         pygame.display.set_caption('MINER')
 
         # engines
@@ -84,7 +85,8 @@ class GameEngine():
 
                 self.checkResourceCollision()
 
-                level.levelTimeLeft = level.levelTime - (time.time() - level.levelTimeStart)
+                level.levelTimeLeft = level.levelTime - (time.time()
+                    - level.levelTimeStart)
                 self.checkGameState()
 
                 # draw everything
@@ -127,12 +129,14 @@ class GameEngine():
 
             # mine
             elif event.key == pygame.K_c:
-                level.destroyBlock(player.targetBlock[0], player.targetBlock[1])
+                level.destroyBlock(
+                    player.targetBlock[0], player.targetBlock[1])
 
             # spawn block
             elif event.key == pygame.K_v:
                 if player.collectedResources >= 4:
-                    level.spawnBlock(player.targetBlock[0], player.targetBlock[1])
+                    level.spawnBlock(
+                        player.targetBlock[0], player.targetBlock[1])
                     player.collectedResources -= 4
 
             # exit
@@ -167,11 +171,10 @@ class GameEngine():
         if pressed(pygame.K_l):
             player.collectedResources += 1
 
-
     def setState(self, state):
         if state == MENU_INGAME:
             # reset game information
-            level.generateLevel(90-(self.currentLevel*10))
+            level.generateLevel(90 - (self.currentLevel * 10))
 
             player.reset()
 
@@ -181,7 +184,7 @@ class GameEngine():
         self.currentLevel = 1
         self.menuScene.currentScene = 0
 
-        level.generateLevel(90-(self.currentLevel*10))
+        level.generateLevel(90 - (self.currentLevel * 10))
         player.reset()
 
     def checkGameState(self):
@@ -190,14 +193,15 @@ class GameEngine():
             self.setState(MENU_GAMEOVER)
         else:
             # check game score
-            if player.collectedResources >= level.requiredResources and player.altitude >= 0 and not player.jumping:
+            if (player.collectedResources >= level.requiredResources
+                    and player.altitude >= 0 and not player.jumping):
                 # player has completed the level
                 self.currentLevel += 1
 
-                if len(self.menuScene.scenes) > self.menuScene.currentScene + 1:
+                if (len(self.menuScene.scenes) >
+                         self.menuScene.currentScene + 1):
                     self.menuScene.currentScene += 1
                     self.setState(MENU_SCENE)
-
 
     def checkCollision(self, sprite, xVel, yVel):
         for x in range(len(level.levelStructure)):

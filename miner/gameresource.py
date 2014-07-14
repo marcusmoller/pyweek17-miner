@@ -1,7 +1,9 @@
 import pygame
 import random
 
-from miner.constants import RESOURCE_MAX_W, RESOURCE_MAX_H, RESOURCE_COLORS, MOVEMENT_SPEED
+from miner.constants import RESOURCE_MAX_W, RESOURCE_MAX_H, \
+    RESOURCE_COLORS, MOVEMENT_SPEED
+
 
 class ResourceSprite(pygame.sprite.Sprite):
     def __init__(self, x, y):
@@ -12,7 +14,7 @@ class ResourceSprite(pygame.sprite.Sprite):
         self.image = pygame.Surface([w, h])
 
         # random color
-        color = random.randint(0, len(RESOURCE_COLORS)-1)
+        color = random.randint(0, len(RESOURCE_COLORS) - 1)
         self.image.fill(RESOURCE_COLORS[color])
 
         self.rect = self.image.get_rect()

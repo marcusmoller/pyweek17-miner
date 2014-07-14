@@ -2,6 +2,7 @@ import pygame
 
 from miner.constants import *
 
+
 class BlockSprite(pygame.sprite.Sprite):
     def __init__(self, x, y, isResourceRich=False):
         pygame.sprite.Sprite.__init__(self)
