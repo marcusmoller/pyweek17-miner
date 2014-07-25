@@ -2,11 +2,14 @@ import pygame
 
 from miner.constants import *
 
+
 class PlayerSprite(pygame.sprite.Sprite):
     def __init__(self):
         pygame.sprite.Sprite.__init__(self)
 
-        self.image = pygame.Surface([BLOCK_W, BLOCK_H+4]) # make the player sprite a little taller than the blocks, but NOT the rect
+        self.image = pygame.Surface([BLOCK_W, BLOCK_H + 4])
+        # make the player sprite a little taller than the blocks,
+        # but NOT the rect
         self.image.fill(PLAYER_COLOR)
 
         #self.rect = self.image.get_rect()
@@ -39,14 +42,13 @@ class PlayerSprite(pygame.sprite.Sprite):
 
     def update(self):
         ''' THIS IS UNUSED - SEE engine.py'''
-        # handle jump 
+        # handle jump
         self.doJump()
 
         # handle gravity (assume we're not on ground)
         self.onGround = False
         if not self.onGround and not self.jumping:
             self.yVel = 2
-
 
         # move player
         if self.xVel < -MOVEMENT_SPEED:
@@ -66,7 +68,6 @@ class PlayerSprite(pygame.sprite.Sprite):
         self.direction = DIR_RIGHT
 
         self.collectedResources = 0
-
 
     def doJump(self):
         if self.jumping and not self.onGround:
