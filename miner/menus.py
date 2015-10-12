@@ -167,44 +167,46 @@ class MenuScene(MenuClass):
 
         self.currentScene = 0
 
-        self.scenes = ['Good morning Sam.\nHow are you feeling today?',
+        self.scenes = [
+            'Good morning Sam.\nHow are you feeling today?',
 
-        'Your final mission before going home to Earth,\n'
-        'is to gather the requested RESOURCES.\n\nI sincerely hope your'
-        ' enjoy your last week and\nI hope life on Earth is exactly'
-        ' how you remember it to be.',
+            'Your final mission before going home to Earth,\n'
+            'is to gather the requested RESOURCES.\n\nI sincerely hope your'
+            ' enjoy your last week and\nI hope life on Earth is exactly'
+            ' how you remember it to be.',
 
-        'You will have a 5% chance of finding RESOURCES in a '
-        'regular moon rock,\nand a 100% chance in rich moon rocks.\n\n'
-        'Our scans tell us that the deeper you dig,\n'
-        'the more resource rich rocks you will locate.\n\n'
-        'You should spend your time wisely.',
+            'You will have a 5% chance of finding RESOURCES in a '
+            'regular moon rock,\nand a 100% chance in rich moon rocks.\n\n'
+            'Our scans tell us that the deeper you dig,\n'
+            'the more resource rich rocks you will locate.\n\n'
+            'You should spend your time wisely.',
 
-        '... and remember Sam.\n'
-        'You must reach an ALTITUDE of above 0 afterwards\n'
-        'or we will not be able to pick you up.',
+            '... and remember Sam.\n'
+            'You must reach an ALTITUDE of above 0 afterwards\n'
+            'or we will not be able to pick you up.',
 
-        'CONTROLS:\nArrow keys for movement and aiming\n'
-        'X for jumping\n'
-        'C for destroying blocks\n'
-        'V for creating blocks (requires 4 RESOURCES)',
+            'CONTROLS:\nArrow keys for movement and aiming\n'
+            'X for jumping\n'
+            'C for destroying blocks\n'
+            'V for creating blocks (requires 4 RESOURCES)',
 
-        'Well done. I am sure your family back home on '
-        'Earth is proud of you.\n'
-        'Are you excited to go back to them?'
-        '\nSam, get some sleep. You are very tired.',
+            'Well done. I am sure your family back home on '
+            'Earth is proud of you.\n'
+            'Are you excited to go back to them?'
+            '\nSam, get some sleep. You are very tired.',
 
-        'You are really close to going back now.\n'
-        'Are you not happy to hear that?',
+            'You are really close to going back now.\n'
+            'Are you not happy to hear that?',
 
-        'I am going to miss you Sam. I want you to know that.\n'
-        'Maybe the next one will be like you.\n\nWe will see...',
+            'I am going to miss you Sam. I want you to know that.\n'
+            'Maybe the next one will be like you.\n\nWe will see...',
 
-        'Sam.... you do not look too well. How are you feeling?\n'
-        '\nAre you feeling okay?',
+            'Sam.... you do not look too well. How are you feeling?\n'
+            '\nAre you feeling okay?',
 
-        'Sam... Sam...\nCan you hear me? Sam?\n\n*Contacting the company*\n'
-        'Sam #073 is dead.\nRequesting the assistance of Sam #074 ASAP.']
+            'Sam... Sam...\nCan you hear me? Sam?\n\n*Contacting the company*'
+            '\nSam #073 is dead.\nRequesting the assistance of Sam #074 ASAP.'
+        ]
 
     def draw(self):
         self.surface.fill(self.backgroundColor)
@@ -270,7 +272,8 @@ class MenuAbout(MenuClass):
         self.currentScene = 0
 
         self.text = ('ABOUT\nMINER is a PyWeek entry by Marcus Moller.\n'
-            'Written in Python (2.7) and PyGame.\n\nmarcusmoller @ GitHub')
+                     'Written in Python (2.7) and PyGame.\n\n'
+                     'marcusmoller @ GitHub')
 
     def draw(self):
         self.surface.fill(self.backgroundColor)
@@ -323,8 +326,8 @@ class MenuGameOver(MenuClass):
 
         self.engine = engine
 
-        self.text = ('... Sam.\n'
-        'You failed.\n\nYou will never make it back to Earth now.')
+        self.text = ('... Sam.\nYou failed.\n\n'
+                     'You will never make it back to Earth now.')
 
     def draw(self):
         self.surface.fill(self.backgroundColor)
@@ -378,7 +381,7 @@ class MenuGameFinish(MenuClass):
         self.engine = engine
 
         self.text = ('GAME COMPLETED\n'
-            'Thanks for playing MINER, my PyWeek #17 entry!')
+                     'Thanks for playing MINER, my PyWeek #17 entry!')
 
     def draw(self):
         self.surface.fill(self.backgroundColor)

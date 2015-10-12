@@ -12,7 +12,6 @@ class PlayerSprite(pygame.sprite.Sprite):
         # but NOT the rect
         self.image.fill(PLAYER_COLOR)
 
-        #self.rect = self.image.get_rect()
         self.rect = pygame.Rect((0, 0, BLOCK_W, BLOCK_H))
         self.rect.x = 10
         self.rect.y = 250
@@ -73,9 +72,6 @@ class PlayerSprite(pygame.sprite.Sprite):
         if self.jumping and not self.onGround:
             self.yVel = -self.jumpVel
             self.jumpVel -= self.gravity
-
-        #if not self.onGround:
-        #   self.yVel -= 4
 
         if self.onGround:
             self.jumping = False

@@ -85,8 +85,8 @@ class GameEngine():
 
                 self.checkResourceCollision()
 
-                level.levelTimeLeft = level.levelTime - (time.time()
-                    - level.levelTimeStart)
+                level.levelTimeLeft = level.levelTime - (time.time() -
+                                                         level.levelTimeStart)
                 self.checkGameState()
 
                 # draw everything
@@ -193,13 +193,13 @@ class GameEngine():
             self.setState(MENU_GAMEOVER)
         else:
             # check game score
-            if (player.collectedResources >= level.requiredResources
-                    and player.altitude >= 0 and not player.jumping):
+            if (player.collectedResources >= level.requiredResources and
+                    player.altitude >= 0 and not player.jumping):
                 # player has completed the level
                 self.currentLevel += 1
 
                 if (len(self.menuScene.scenes) >
-                         self.menuScene.currentScene + 1):
+                        self.menuScene.currentScene + 1):
                     self.menuScene.currentScene += 1
                     self.setState(MENU_SCENE)
 
