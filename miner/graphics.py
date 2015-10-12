@@ -81,9 +81,9 @@ class GraphicsEngine():
                                                        level.levelTimeLeft)))
 
     def drawScore(self):
-        textSurface = self.scoreFont.render('RESOURCES: {}'/'{}'.format(
-            player.collectedResources, level.requiredResources),
-            0, (255, 255, 255))
+        textSurface = self.scoreFont.render('RESOURCES: ' +
+            str(player.collectedResources) + '/' +
+            str(level.requiredResources), 0, (255, 255, 255))
         self.screenSurface.blit(textSurface, (20, 20))
 
     def drawTime(self):
